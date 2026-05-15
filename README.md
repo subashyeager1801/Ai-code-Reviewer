@@ -94,24 +94,6 @@ You can check the health endpoint in your browser:
 http://127.0.0.1:8000/health
 ```
 
-## Deploy on Vercel
-
-This project includes a root `app.py` file so Vercel can detect the FastAPI
-application.
-
-1. Import the GitHub repository in Vercel.
-2. Keep the framework preset as Other / Python.
-3. Leave the build and output settings empty unless Vercel asks for them.
-4. Add these environment variables:
-
-```env
-GROQ_API_KEY=your_groq_api_key_here
-GROQ_MODEL=llama-3.3-70b-versatile
-```
-
-Vercel will install dependencies from the root `requirements.txt`, which points
-contains the same Python dependencies used by `backend/requirements.txt`.
-
 ## API
 
 ### POST `/analyze`
