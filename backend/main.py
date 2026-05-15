@@ -19,7 +19,7 @@ FRONTEND_DIR = BASE_DIR / "frontend"
 load_dotenv(BASE_DIR / "backend" / ".env")
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
 
 SYSTEM_PROMPT = """You are an expert code reviewer.
 
