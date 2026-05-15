@@ -24,14 +24,41 @@ Structured JSON Response
 Highlighted Frontend Result Cards
 ```
 
-## Easy Local Setup
+## Project Setup Instructions
+
+### Prerequisites
+
+- Python 3.10 or newer
+- Git
+- A Groq API key from `https://console.groq.com/keys`
+
+### Clone the Repository
+
+```powershell
+git clone https://github.com/subashyeager1801/Ai-code-Reviewer.git
+cd Ai-code-Reviewer
+```
+
+### Create a Virtual Environment
 
 Run these commands from the project root:
 
 ```powershell
 python -m venv venv
 .\venv\Scripts\activate
+```
+
+### Install Dependencies
+
+```powershell
 pip install -r backend\requirements.txt
+```
+
+### Configure Environment Variables
+
+Create a local `.env` file from the example file:
+
+```powershell
 copy backend\.env.example backend\.env
 ```
 
@@ -42,7 +69,10 @@ GROQ_API_KEY=your_groq_api_key_here
 GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
-Start the full app with one simple command:
+`GROQ_MODEL` is optional. If it is not provided, the app uses
+`llama-3.3-70b-versatile` by default.
+
+### Run the Application
 
 ```powershell
 python manage.py runserver
@@ -55,6 +85,14 @@ http://127.0.0.1:8000
 ```
 
 The frontend and backend now run from the same FastAPI server.
+
+### Verify the Backend
+
+You can check the health endpoint in your browser:
+
+```text
+http://127.0.0.1:8000/health
+```
 
 ## Deploy on Vercel
 
@@ -72,7 +110,7 @@ GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
 Vercel will install dependencies from the root `requirements.txt`, which points
-to `backend/requirements.txt`.
+contains the same Python dependencies used by `backend/requirements.txt`.
 
 ## API
 
